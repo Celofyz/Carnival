@@ -24,5 +24,4 @@ public class Window extends Canvas{
 		main.start();
 		
 	}
-
 }
