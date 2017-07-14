@@ -20,9 +20,10 @@ public class Main extends Canvas implements Runnable {
 	private Handler handler;
 	
 	Main(){
+		handler = new Handler();
 		new Window(WIDTH, HEIGHT, "Carnival", this);
 		
-		handler = new Handler();
+		
 		handler.addObject(new Player(100, 100, ID.Player));
 	}
 
