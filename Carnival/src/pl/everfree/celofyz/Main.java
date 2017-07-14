@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
+import pl.everfree.celofyz.character.Player;
+
 public class Main extends Canvas implements Runnable {
 	
 	private static final long serialVersionUID = -8836288138872704665L;
@@ -15,8 +17,13 @@ public class Main extends Canvas implements Runnable {
 	private Thread thread;
 	private boolean running = false;
 	
+	private Handler handler;
+	
 	Main(){
 		new Window(WIDTH, HEIGHT, "Carnival", this);
+		
+		handler = new Handler();
+		handler.addObject(new Player(100, 100, ID.Player));
 	}
 
 	public synchronized void start(){
@@ -66,7 +73,7 @@ public class Main extends Canvas implements Runnable {
 		
 	}
 	public void tick(){
-		
+		handler.tick();
 	}
 	public void render(){
 		BufferStrategy bs = this.getBufferStrategy();
@@ -79,6 +86,8 @@ public class Main extends Canvas implements Runnable {
 		
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
+		
+		handler.render(g);
 		
 		g.dispose();
 		bs.show();

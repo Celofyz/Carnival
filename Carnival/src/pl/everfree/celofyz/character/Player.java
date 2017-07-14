@@ -1,5 +1,6 @@
 package pl.everfree.celofyz.character;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import pl.everfree.celofyz.GameObject;
@@ -18,7 +19,8 @@ public class Player extends GameObject{
 
 	@Override
 	public void render(Graphics g) {
-		
+		g.setColor(Color.WHITE);
+		g.fillRect(x, y, 32, 32);
 	}
 
 }
