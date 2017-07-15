@@ -23,10 +23,10 @@ public class KeyInput extends KeyAdapter{
 			
 			if(tempObject.getId() == ID.Player){
 				
-				if(key == KeyEvent.VK_W) tempObject.move(0, -5);;
-				if(key == KeyEvent.VK_S) tempObject.move(0, 5);;
-				if(key == KeyEvent.VK_A) tempObject.move(-5, 0);
-				if(key == KeyEvent.VK_D) tempObject.move(5, 0);;
+				if(key == KeyEvent.VK_W && tempObject.getVelY() > -5) tempObject.setVelY(tempObject.getVelY() - 5);
+				if(key == KeyEvent.VK_S && tempObject.getVelY() < 5) tempObject.setVelY(tempObject.getVelY() + 5);
+				if(key == KeyEvent.VK_A && tempObject.getVelX() > -5) tempObject.setVelX(tempObject.getVelX() - 5);
+				if(key == KeyEvent.VK_D && tempObject.getVelX() < 5) tempObject.setVelX(tempObject.getVelX() + 5);
 			}
 		}
 	}
@@ -36,6 +36,14 @@ public class KeyInput extends KeyAdapter{
 		
 		for(int i = 0; i < handler.object.size(); i++){
 			GameObject tempObject = handler.object.get(i);
+			
+			if(tempObject.getId() == ID.Player){
+				
+				if(key == KeyEvent.VK_W && tempObject.getVelY() < 5) tempObject.setVelY(tempObject.getVelY() + 5);
+				if(key == KeyEvent.VK_S && tempObject.getVelY() > -5) tempObject.setVelY(tempObject.getVelY() - 5);
+				if(key == KeyEvent.VK_A && tempObject.getVelX() < 5) tempObject.setVelX(tempObject.getVelX() + 5);
+				if(key == KeyEvent.VK_D && tempObject.getVelX() > -5) tempObject.setVelX(tempObject.getVelX() - 5);
+			}
 		}
 	}
 }
