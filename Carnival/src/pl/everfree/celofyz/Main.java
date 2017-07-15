@@ -6,6 +6,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
 import pl.everfree.celofyz.character.Player;
+import pl.everfree.celofyz.io.KeyInput;
 
 public class Main extends Canvas implements Runnable {
 	
@@ -19,8 +20,9 @@ public class Main extends Canvas implements Runnable {
 	
 	private Handler handler;
 	
-	Main(){
+	public Main(){
 		handler = new Handler();
+		this.addKeyListener(new KeyInput(handler));
 		new Window(WIDTH, HEIGHT, "Carnival", this);
 		
 		

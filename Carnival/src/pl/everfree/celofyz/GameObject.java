@@ -1,6 +1,7 @@
 package pl.everfree.celofyz;
 
 import java.awt.Graphics;
+import java.util.Vector;
 
 public abstract class GameObject {
 	
@@ -16,6 +17,8 @@ public abstract class GameObject {
 	
 	public abstract void tick();
 	public abstract void render(Graphics g);
+	
+	public void move(int mx, int my){}
 
 	public ID getId() {
 		return id;
