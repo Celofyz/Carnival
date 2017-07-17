@@ -14,16 +14,16 @@ public class Player extends GameObject{
 
 	@Override
 	public void tick() {	
-		if(up == true) y = y - 2;
-		if(down == true) y = y + 2;
-		if(right == true) x = x + 2;
-		if(left == true) x = x - 2;
+		if(up == true) y = y - 5;
+		if(down == true) y = y + 5;
+		if(right == true) x = x + 5;
+		if(left == true) x = x - 5;
 		
 	}
 
 	@Override
 	public void render(Graphics g) {
 		g.setColor(Color.WHITE);
-		g.fillRect(x, y, 32, 32);
+		g.fillRect(x, y, 64, 64);
 	}
 }

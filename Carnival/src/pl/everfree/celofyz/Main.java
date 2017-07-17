@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
+import pl.everfree.celofyz.character.Enemy;
 import pl.everfree.celofyz.character.Player;
 import pl.everfree.celofyz.io.KeyInput;
 
@@ -27,6 +28,11 @@ public class Main extends Canvas implements Runnable {
 		
 		
 		handler.addObject(new Player(100, 100, ID.Player));
+		handler.addObject(new Enemy(456, 542, ID.Enemy));
+		handler.addObject(new Enemy(722, 245, ID.Enemy));
+		handler.addObject(new Enemy(687, 155, ID.Enemy));
+		handler.addObject(new Enemy(175, 450, ID.Enemy));
+		handler.addObject(new Enemy(354, 356, ID.Enemy));
 	}
 
 	public synchronized void start(){
@@ -100,5 +106,4 @@ public class Main extends Canvas implements Runnable {
 		new Main();
 		
 	}
-
 }
