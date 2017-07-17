@@ -14,8 +14,10 @@ public class Player extends GameObject{
 
 	@Override
 	public void tick() {	
-		x += velX;
-		y += velY;
+		if(up == true) y = y - 2;
+		if(down == true) y = y + 2;
+		if(right == true) x = x + 2;
+		if(left == true) x = x - 2;
 		
 	}
 
@@ -24,5 +26,4 @@ public class Player extends GameObject{
 		g.setColor(Color.WHITE);
 		g.fillRect(x, y, 32, 32);
 	}
-
 }

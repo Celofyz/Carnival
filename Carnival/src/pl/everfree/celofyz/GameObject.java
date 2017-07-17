@@ -1,13 +1,17 @@
 package pl.everfree.celofyz;
 
 import java.awt.Graphics;
-import java.util.Vector;
 
 public abstract class GameObject {
 	
 	protected ID id;
 	protected int x, y;
 	protected int velX, velY;
+	
+	protected boolean right = false;
+	protected boolean left = false;
+	protected boolean up = false;
+	protected boolean down = false;
 	
 	public GameObject(int x, int y, ID id){
 		this.x = x;
@@ -28,35 +32,48 @@ public abstract class GameObject {
 		return x;
 	}
 
-	public int getY() {
-		return y;
-	}
-
-	public int getVelX() {
-		return velX;
-	}
-
-	public int getVelY() {
-		return velY;
-	}
-
-	public void setId(ID id) {
-		this.id = id;
-	}
-
 	public void setX(int x) {
 		this.x = x;
+	}
+
+	public int getY() {
+		return y;
 	}
 
 	public void setY(int y) {
 		this.y = y;
 	}
 
+	public int getVelX() {
+		return velX;
+	}
+
 	public void setVelX(int velX) {
 		this.velX = velX;
+	}
+
+	public int getVelY() {
+		return velY;
 	}
 
 	public void setVelY(int velY) {
 		this.velY = velY;
 	}
+
+	public void setRight(boolean right) {
+		this.right = right;
+	}
+
+	public void setLeft(boolean left) {
+		this.left = left;
+	}
+
+	public void setUp(boolean up) {
+		this.up = up;
+	}
+
+	public void setDown(boolean down) {
+		this.down = down;
+	}
+
 }
