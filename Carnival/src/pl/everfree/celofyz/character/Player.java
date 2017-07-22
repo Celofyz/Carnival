@@ -14,10 +14,10 @@ public class Player extends GameObject{
 
 	@Override
 	public void tick() {	
-		if(up == true) y = y - 5;
-		if(down == true) y = y + 5;
-		if(right == true) x = x + 5;
-		if(left == true) x = x - 5;
+		if(getUp() == true) y = y - 5;
+		if(getDown() == true) y = y + 5;
+		if(getRight() == true) x = x + 5;
+		if(getLeft() == true) x = x - 5;
 		
 	}
 

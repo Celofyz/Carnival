@@ -60,16 +60,32 @@ public abstract class GameObject {
 		this.velY = velY;
 	}
 
+	public boolean getRight(){
+		return right;
+	}
+	
 	public void setRight(boolean right) {
 		this.right = right;
+	}
+	
+	public boolean getLeft(){
+		return left;
 	}
 
 	public void setLeft(boolean left) {
 		this.left = left;
 	}
+	
+	public boolean getUp(){
+		return up;
+	}
 
 	public void setUp(boolean up) {
 		this.up = up;
+	}
+	
+	public boolean getDown(){
+		return down;
 	}
 
 	public void setDown(boolean down) {
