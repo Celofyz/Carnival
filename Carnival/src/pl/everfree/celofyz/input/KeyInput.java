@@ -1,4 +1,4 @@
-package pl.everfree.celofyz.io;
+package pl.everfree.celofyz.input;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -29,6 +29,8 @@ public class KeyInput extends KeyAdapter{
 				if(key == KeyEvent.VK_D) tempObject.setRight(true);;
 			}
 		}
+		
+		if(key == KeyEvent.VK_ESCAPE) System.exit(1);
 	}
 	
 	public void keyReleased(KeyEvent e){

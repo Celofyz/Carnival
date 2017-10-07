@@ -1,5 +1,7 @@
 package pl.everfree.celofyz;
 
+/*Made using RealTutsGML's java tutorials <3*/
+
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -7,7 +9,7 @@ import java.awt.image.BufferStrategy;
 
 import pl.everfree.celofyz.character.Enemy;
 import pl.everfree.celofyz.character.Player;
-import pl.everfree.celofyz.io.KeyInput;
+import pl.everfree.celofyz.input.KeyInput;
 
 public class Main extends Canvas implements Runnable {
 	
@@ -20,11 +22,14 @@ public class Main extends Canvas implements Runnable {
 	private boolean running = false;
 	
 	private Handler handler;
+	private HUD hud;
 	
 	public Main(){
 		handler = new Handler();
 		this.addKeyListener(new KeyInput(handler));
 		new Window(WIDTH, HEIGHT, "Carnival", this);
+		
+		hud = new HUD();
 		
 		
 		handler.addObject(new Player(100, 100, ID.Player));
@@ -80,6 +85,7 @@ public class Main extends Canvas implements Runnable {
 	}
 	public void tick(){
 		handler.tick();
+		hud.tick();
 	}
 	public void render(){
 		BufferStrategy bs = this.getBufferStrategy();
@@ -94,9 +100,18 @@ public class Main extends Canvas implements Runnable {
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		handler.render(g);
+		hud.render(g);
 		
 		g.dispose();
 		bs.show();
+	}
+	public static int clamp(int var, int min, int max){
+		if(var >= max)
+			return var = max;
+		else if(var <= min)
+			return var = min;
+		else
+			return var;
 	}
 
 	public static void main(String[] args) {

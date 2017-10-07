@@ -5,6 +5,7 @@ import java.awt.Graphics;
 
 import pl.everfree.celofyz.GameObject;
 import pl.everfree.celofyz.ID;
+import pl.everfree.celofyz.Main;
 
 public class Player extends GameObject{
 
@@ -19,6 +20,8 @@ public class Player extends GameObject{
 		if(getRight() == true) x = x + 5;
 		if(getLeft() == true) x = x - 5;
 		
+		x = Main.clamp(x, 0, Main.WIDTH - 64);
+		y = Main.clamp(y, 0, Main.HEIGHT - 64);
 	}
 
 	@Override
